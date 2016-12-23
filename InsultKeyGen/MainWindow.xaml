@@ -1,0 +1,47 @@
+﻿<Window x:Class="InsultKeyGen.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InsultKeyGen"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <StackPanel>
+            <Label Content="Input" Margin="10 0 10 0"/>
+            <TextBox x:Name="tbInput" MinLines="3" MaxLines="3" Margin="10 0 10 0" AcceptsReturn="True"/>
+            <Label Content="Output" Margin="10 0 10 0"/>
+            <TextBox x:Name="tbOutput" MinLines="3" MaxLines="3" Margin="10 0 10 0" AcceptsReturn="True" Text="{Binding Path=Output}"/>
+            <Grid Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" x:Name="pnlBlockLength">
+                    <Label Content="Blocklength"/>
+                    <RadioButton x:Name="rbBlocklength3" Content="3" GroupName="Blocklength"/>
+                    <RadioButton x:Name="rbBlocklength4" Content="4" GroupName="Blocklength" IsChecked="True"/>
+                    <RadioButton x:Name="rbBlocklength5" Content="5" GroupName="Blocklength"/>
+                    <RadioButton x:Name="rbBlocklength6" Content="6" GroupName="Blocklength"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1" x:Name="pnlSeparator">
+                    <Label Content="Separator"/>
+                    <RadioButton x:Name="rbFreeSpace" Content="Free Space" GroupName="Separator"/>
+                    <RadioButton x:Name="rbMinus" Content="Minus" GroupName="Separator" IsChecked="True"/>
+                    <RadioButton x:Name="rbUnderscore" Content="Underscore" GroupName="Separator"/>
+                </StackPanel>
+                <StackPanel Grid.Column="2" x:Name="pnlBlockcount">
+                    <Label Content="Blockcount"/>
+                    <RadioButton x:Name="rbBlockcount3" Content="3" GroupName="Blockcount"/>
+                    <RadioButton x:Name="rbBlockcount4" Content="4" GroupName="Blockcount" IsChecked="True"/>
+                    <RadioButton x:Name="rbBlockcount5" Content="5" GroupName="Blockcount"/>
+                    <RadioButton x:Name="rbBlockcount6" Content="6" GroupName="Blockcount"/>
+                </StackPanel>
+            </Grid>
+            <Button x:Name="btnGenerate" Margin="10 0 10 0" Content="Generate" Click="btnGenerate_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
