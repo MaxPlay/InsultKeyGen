@@ -105,10 +105,12 @@ namespace InsultKeyGen
 
         private GeneratorSettings GenerateSettings()
         {
-            GeneratorSettings settings = new GeneratorSettings();
-            settings.Blockcount = int.Parse((string)pnlBlockcount.Children.OfType<RadioButton>().FirstOrDefault(f => f.IsChecked == true).Content);
-            settings.Blocklength = int.Parse((string)pnlBlockLength.Children.OfType<RadioButton>().FirstOrDefault(f => f.IsChecked == true).Content);
-            settings.Separator = (Separator)Enum.Parse(typeof(Separator), ((string)pnlSeparator.Children.OfType<RadioButton>().FirstOrDefault(f => f.IsChecked == true).Content).Replace(" ", string.Empty));
+            GeneratorSettings settings = new GeneratorSettings
+            {
+                Blockcount = int.Parse((string)pnlBlockcount.Children.OfType<RadioButton>().FirstOrDefault(f => f.IsChecked == true).Content),
+                Blocklength = int.Parse((string)pnlBlockLength.Children.OfType<RadioButton>().FirstOrDefault(f => f.IsChecked == true).Content),
+                Separator = (Separator)Enum.Parse(typeof(Separator), ((string)pnlSeparator.Children.OfType<RadioButton>().FirstOrDefault(f => f.IsChecked == true).Content).Replace(" ", string.Empty))
+            };
             return settings;
         }
     }
